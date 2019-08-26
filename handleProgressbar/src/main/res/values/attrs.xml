@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HandleProgressbar">
+        <attr name="progressbarColor" format="color" />
+        <attr name="handleSize" format="dimension"/>
+        <attr name="progressbarState" format="enum">
+            <enum name="Progress" value="0" />
+            <enum name="Handle" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>
