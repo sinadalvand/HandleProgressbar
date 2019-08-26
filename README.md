@@ -13,13 +13,13 @@ animation Progressbar that can transform to handle
 
 ## Gradle & Maven
 ```
-compile 'ir.sinadalvand.libs:handleprogressbar:{last_version}'
+ implementation 'ir.sinadalvand.libs:handleProgressbar:{Last_release_version}'
 ```
 ```
 <dependency>
 	<groupId>ir.sinadalvand.libs</groupId>
-	<artifactId>handleprogressbar</artifactId>
-	<version>1.0.1</version>
+	<artifactId>handleProgressbar</artifactId>
+	<version>1.0.3</version>
 	<type>pom</type>
 </dependency>
 ```
