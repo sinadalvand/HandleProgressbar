@@ -36,6 +36,15 @@ animation Progressbar that can transform to handle
         />
 ```
 
+# For start progressing :
+```
+progress.start()
+```
+
+# For transform to Handle :
+```
+progress.stop()
+```
 
 
 and also you can set details programically:
