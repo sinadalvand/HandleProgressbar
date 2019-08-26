@@ -1,6 +1,38 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'HandleProgressbar'
+
+    publishedGroupId = 'ir.sinadalvand.libs'
+    libraryName = 'HandleProgressbar'
+    artifact = 'handleProgressbar'
+
+    libraryDescription = 'progressbar can change to handle'
+
+    siteUrl = 'https://github.com/sinadalvand/HandleProgressbar'
+    gitUrl = 'https://github.com/sinadalvand/HandleProgressbar.git'
+
+    libraryVersion = "1.0.3"
+
+    developerId = 'sinadalvand'
+    developerName = 'Sina Dalvand'
+    developerEmail = 'dalvandsina@yahoo.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+tasks.withType(Javadoc) {
+    excludes = ['**/*.kt']
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
 
 android {
     compileSdkVersion 28
@@ -11,7 +43,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -30,12 +62,107 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation "androidx.core:core-ktx:1.0.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+
 }
 repositories {
     mavenCentral()
 }
+
+
+
+
+//group = publishedGroupId
+//version = libraryVersion
+//
+//install {
+//    repositories.mavenInstaller {
+//        pom.project {
+//            packaging 'aar'
+//            groupId publishedGroupId
+//            artifactId artifact
+//
+//            name libraryName
+//            description libraryDescription
+//            url siteUrl
+//
+//            licenses {
+//                license {
+//                    name licenseName
+//                    url licenseUrl
+//                }
+//            }
+//            developers {
+//                developer {
+//                    id developerId
+//                    name developerName
+//                    email developerEmail
+//                }
+//            }
+//            scm {
+//                connection gitUrl
+//                developerConnection gitUrl
+//                url siteUrl
+//            }
+//        }
+//    }
+//}
+//
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from android.sourceSets.main.java.srcDirs
+//}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//    excludes = ['**/*.kt']
+//}
+//
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//tasks.withType(Javadoc) {
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//    options.addStringOption('encoding', 'UTF-8')
+//    options.addStringOption('charSet', 'UTF-8')
+//}
+//
+//artifacts {
+//    archives javadocJar
+//    archives sourcesJar
+//}
+//
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+//
+//
+//    configurations = ['archives']
+//    pkg {
+//        repo = bintrayRepo
+//        name = bintrayName
+//        desc = libraryDescription
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = allLicenses
+//        dryRun = false
+//        publish = true
+//        override = false
+//        publicDownloadNumbers = true
+//        version {
+//            desc = libraryDescription
+//        }
+//    }
+//}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
