@@ -36,12 +36,12 @@ animation Progressbar that can transform to handle
         />
 ```
 
-# For start progressing :
+### For start progressing :
 ```
 progress.start()
 ```
 
-# For transform to Handle :
+### For transform to Handle :
 ```
 progress.stop()
 ```
