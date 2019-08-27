@@ -67,7 +67,7 @@ progress.setHandleColor(int)
 
 # License
 
-    Copyright 2016 Nightonke
+    Copyright 2019 Sina Dalvand
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
